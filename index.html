@@ -8,7 +8,11 @@
 </head>
 <body>
   <div id="app">
-    {{ message }}
+    <ul>
+      <li v-for="(show, index) in tvshows" :key="index">
+        <strong>{{ show.name }}</strong> ({{ show.seasons }} Temporadas)
+      </li>
+    </ul>
   </div>
 
 
@@ -17,7 +21,12 @@
     const app = new Vue({
       el: '#app',
       data: {
-        message: 'Hola desde Vuejs'
+        tvshows: [
+          { name: 'Game of Thrones', seasons: 7 },
+          { name: 'Breaking Bad', seasons: 5 },
+          { name: 'LOST', seasons: 6 },
+          { name: 'Battlestar Galactica', seasons: 4 }
+        ]
       }
     })
   </script>
